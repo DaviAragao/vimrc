@@ -31,6 +31,9 @@ Plugin 'mattn/emmet-vim'
 " Vim + Git
 Plugin 'tpope/vim-fugitive'
 
+" Número de linha
+Plugin 'myusuf3/numbers.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
