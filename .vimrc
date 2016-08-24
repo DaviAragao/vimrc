@@ -94,11 +94,12 @@ let g:airline_symbols.linenr = ''
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+map<F6> :lclose<CR>
 
-let g:syntastic_enable_signs=1
+let g:syntastic_enable_signs=0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " Numero de linha
@@ -116,6 +117,9 @@ highlight SpecialKey ctermfg=234 guifg=#4a4a59
 set list
 set listchars=tab:\|\ 
 set smarttab
+
+" Caminha para a pasta do arquivo
+set autochdir
 
 " Cursor
 set cursorline
@@ -166,9 +170,10 @@ endfunction
 inoremap <F7> <c-r>=InsertTabWrapper ("forward")<cr>
 inoremap <s-F7> <c-r>=InsertTabWrapper ("backward")<cr>
 
-" <F10> proximo buffer, <F9> buffer anterior
+" <F10> proximo buffer, <F9> buffer anterior <F8> apaga buffer
 map <F10> :bn!<CR>
 map <F9> :bp!<CR>
+map <F8> :bd<CR>
 
 " Fechamento automatico de parenteses
 imap { {}<left>
