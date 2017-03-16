@@ -1,5 +1,5 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype on                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -38,7 +38,7 @@ Plugin 'myusuf3/numbers.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -175,7 +175,13 @@ map <F10> :bn!<CR>
 map <F9> :bp!<CR>
 map <F8> :bd<CR>
 
+" Salvar arquivo somente leitura
+cmap :w!! w !sudo tee > /dev/null %
+
 " Fechamento automatico de parenteses
 imap { {}<left>
 imap ( ()<left>
 imap [ []<left>
+
+" Ajuste de parênteses
+map <F12> :%s/( /(/g<CR> :%s/ )/)/g<CR>
