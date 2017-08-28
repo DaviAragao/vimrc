@@ -20,7 +20,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'msanders/snipmate.vim'
 
 " Verificador de erros PHP
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 " Idetificador de cor
 Plugin 'ap/vim-css-color'
@@ -33,6 +33,19 @@ Plugin 'tpope/vim-fugitive'
 
 " Número de linha
 Plugin 'myusuf3/numbers.vim'
+
+" JavaScript minify
+Plugin 'maksimr/vim-jsbeautify'
+
+" JavaScript sintax
+Plugin 'sheerun/vim-polyglot'
+
+" HTML sintaxe, e identação
+Plugin 'othree/html5.vim'
+
+" Polymer
+"Plugin 'webdesus/polymer-ide.vim'
+Plugin 'bendavis78/vim-polymer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -110,6 +123,7 @@ set background=dark
 
 " Tema de cores
 colorscheme koehler
+syntax on
 
 " Tabulacoes
 highlight NonText ctermfg=234 guifg=#4a4a59
@@ -135,20 +149,12 @@ autocmd FileType xml        set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php        set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c          set omnifunc=ccomplete#Complete
 
+" Força o editor interpretar o arquivo e colorir a sintaxe.
+autocmd BufNewFile,BufRead * :syntax sync fromstart
+
 " Code hightligth
 let php_sql_query=1                                             
 let php_htmlInStrings=1
-
-" Abrir JavaScript minificado 
-command! UnMinify call UnMinify()
-function! UnMinify()
-	%s/{\ze[^\r\n]/{\r/g
-	%s/){/) {/g
-	%s/};\?\ze[^\r\n]/\0\r/g
-	%s/;\ze[^\r\n]/;\r/g
-	%s/[^\s]\zs[=&|]\+\ze[^\s]/ \0 /g
-	normal ggVG=
-endfunction
 
 ""Complementação de palavras
 set dictionary+=/usr/dict/words
