@@ -44,7 +44,6 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'othree/html5.vim'
 
 " Polymer
-"Plugin 'webdesus/polymer-ide.vim'
 Plugin 'bendavis78/vim-polymer'
 
 " All of your Plugins must be added before the following line
@@ -126,7 +125,6 @@ set background=dark
 
 " Tema de cores
 colorscheme koehler
-syntax on
 
 " Tabulacoes
 highlight NonText ctermfg=234 guifg=#4a4a59
